@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from './root/Root';
+import Header from './header/Header';
+import AssigneeList from './assignee-list/AssigneeList';
 import './index.css';
 
-ReactDOM.render(
-  <Root />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Header />,document.getElementById('header'));
+ReactDOM.render(<AssigneeList />,document.getElementById('assignee-list'));
