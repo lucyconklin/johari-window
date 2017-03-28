@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import SideBar from '../sidebar/Sidebar';
+import SideBar from '../sidebar/SideBar';
 import Header from '../header/Header';
 import Main from '../main/Main';
 import Johari from '../johari/Johari'
