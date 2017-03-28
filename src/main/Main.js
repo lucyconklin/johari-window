@@ -6,7 +6,7 @@ import AssigneeList from '../assignee-list/AssigneeList';
 class Main extends Component {
   render() {
     return (
-      <div className='Main'>
+      <div className='main'>
         <Header />
         <AssigneeList />
       </div>
