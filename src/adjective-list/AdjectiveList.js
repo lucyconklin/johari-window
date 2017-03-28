@@ -5,7 +5,7 @@ import './AdjectiveList.css';
 class AdjectiveList extends Component {
   constructor() {
     super();
-    this.state = { adjectives: ['happy', 'sad'] };
+    this.state = { adjectives: [] };
   }
 
   componentDidMount() {
