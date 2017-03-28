@@ -7,17 +7,12 @@ describe('Header', () => {
     shallow(<Header />);
   })
 
-  it('renders johari window title', () => {
-    const wrapper = shallow(<Header />);
-    const welcome = <h2>Johari Window</h2>;
-
-    expect(wrapper.contains(welcome)).toEqual(true);
-  })
-
   it('renders the users name', () => {
-    const wrapper = shallow(<Header name='Stannis Baratheon'/>);
-    const name = <h3>Stannis Baratheon</h3>;
+    const name = 'Stannis Baratheon';
+    const wrapper = shallow(<Header />);
+    wrapper.setState({ name: name })
+    const htmlName = <h3>Stannis Baratheon</h3>;
 
-    expect(wrapper.contains(name)).toEqual(true);
+    expect(wrapper.contains(htmlName)).toEqual(true);
   })
 })

@@ -8,17 +8,14 @@ class AssigneeList extends Component {
     this.state = { assignees: [] };
   }
 
-  // componentDidMount() {
-  //   fetch(`insert api url` + this.props.id) 
-  //     .then(result=> {
-  //       this.setState({assignees: result.json()});
-  //     });
-  // }
+  componentDidMount() {
+    this.setState({ assignees: ["Lucy", "Kyle", "Drew" ]});
+  }
 
   eachAssignee(name, i) {
     return <Assignee key={i} name={name} />
   }
-    
+
   render() {
     return (
       <div className='AssigneeList'>
