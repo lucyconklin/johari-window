@@ -4,7 +4,7 @@ import './Sidebar.css';
 class Sidebar extends Component {
   render() {
     return (
-      <div className='sidebar'>
+      <div className='Sidebar'>
         <div className='sidebar-header'>
           <h3>Johari Window</h3>
         </div>
