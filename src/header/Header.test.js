@@ -14,10 +14,6 @@ describe('Header', () => {
     expect(wrapper.contains(welcome)).toEqual(true);
   })
 
-  it('fetches the users name', () => {
-    
-  })
-
   it('renders the users name', () => {
     const wrapper = shallow(<Header name='Stannis Baratheon'/>);
     const name = <h3>Stannis Baratheon</h3>;
