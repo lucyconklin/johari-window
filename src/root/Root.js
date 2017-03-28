@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './Main.css';
+import './Root.css';
 import Header from '../header/Header';
 import AssigneeList from '../assignee-list/AssigneeList';
 
-class Main extends Component {
+class Root extends Component {
   render() {
     return (
-      <div className='main'>
+      <div className='root'>
         <Header />
         <AssigneeList />
       </div>
@@ -14,4 +14,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Root;
