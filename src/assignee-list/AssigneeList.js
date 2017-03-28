@@ -9,7 +9,7 @@ class AssigneeList extends Component {
   }
 
   componentDidMount() {
-    this.setState({ assignees: ["Lucy", "Kyle", "Drew" ]});
+    this.setState({ assignees: ["Self", "Annie", "Kyle", "Drew" ]});
   }
 
   eachAssignee(name, i) {
