@@ -3,49 +3,15 @@ import './App.css';
 import SideBar from '../sidebar/SideBar';
 import Header from '../header/Header';
 import Main from '../main/Main';
-import Johari from '../johari/Johari'
 
 class App extends Component {
-
-  constructor() {
-    super();
-    this.state = { onJohari: false }
-  }
-
-  renderPage() {
-    if (this.state.onJohari) {
-      return (
-      <div className='App'>
-        <SideBar />
-        <Johari />
-      </div>
-    )
-    } else {
-      return (
-        <div className='App'>
-          <SideBar />
-          <Main />
-        </div>
-      )
-    }
-  }
-
   render() {
-    if (this.state.onJohari) {
-      return (
+    return (
       <div className='App'>
         <SideBar />
-        <Johari />
+        <Main />
       </div>
-    )
-    } else {
-      return (
-        <div className='App'>
-          <SideBar />
-          <Main />
-        </div>
-      )
-    }
+    );
   }
 }
 
