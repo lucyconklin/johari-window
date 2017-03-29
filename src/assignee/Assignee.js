@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Assignee.css';
 
 class Assignee extends Component {
@@ -6,7 +7,7 @@ class Assignee extends Component {
   render() {
     return (
       <div className="Assignee">
-        <a href='/'>{ this.props.name }</a>
+        <Link to='/johari'>{ this.props.name }</Link>
       </div>
     );
   }

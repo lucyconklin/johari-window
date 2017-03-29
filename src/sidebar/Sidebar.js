@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Sidebar.css';
 
 class Sidebar extends Component {
@@ -9,8 +11,8 @@ class Sidebar extends Component {
           <h3>Johari Window</h3>
         </div>
         <div className='sidebar-links'>
-          <a>Assignments</a>
-          <a>My Window</a>
+          <Link to='/'>Assignments</Link>
+          <Link to='/mywindow'>My Window</Link>
         </div>
       </div>
     );
