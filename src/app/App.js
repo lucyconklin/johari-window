@@ -1,50 +1,42 @@
 import React, { Component } from 'react';
-import './App.css';
-import SideBar from '../sidebar/Sidebar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import Main from '../main/Main';
-import Johari from '../johari/Johari'
+import Johari from '../johari/Johari';
+import Sidebar from '../sidebar/Sidebar';
+
+const routes = [
+  { path: '/',
+    exact: true,
+    main: () => <Main />
+  },
+  { path: '/johari',
+    main: () => <Johari />
+  },
+]
 
 class App extends Component {
-
-  constructor() {
-    super();
-    this.state = { onJohari: false }
-  }
-
-  renderPage() {
-    if (this.state.onJohari) {
-      return (
-      <div className='App'>
-        <SideBar />
-        <Johari />
-      </div>
-    )
-    } else {
-      return (
-        <div className='App'>
-          <SideBar />
-          <Main />
-        </div>
-      )
-    }
-  }
-
   render() {
-    if (this.state.onJohari) {
-      return (
-      <div className='App'>
-        <SideBar />
-        <Johari />
-      </div>
-    )
-    } else {
-      return (
-        <div className='App'>
-          <SideBar />
-          <Main />
+    return (
+      <Router>
+        <div>
+
+          <Sidebar />
+
+          <div>
+            { routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                component={route.main}
+              />
+            ))}
+          </div>
+
         </div>
-      )
-    }
+    </Router>
+    )
   }
 }
 
