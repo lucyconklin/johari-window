@@ -1,25 +1,25 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow, mount, render } from 'enzyme';
 import Sidebar from './Sidebar';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 describe('Sidebar', () => {
-  it('renders without crashing', () => {
-    shallow(<Sidebar />);
-  });
+
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = mount(<Router><Sidebar /></Router>)
+  })
 
   it('renders sidebar links', () => {
-    const wrapper = mount(<Sidebar />);
-    const assignmentLink = <a>Assignments</a>
-    const windowLink = <a>My Window</a>
 
-    expect(wrapper.contains(assignmentLink)).toEqual(true)
-    expect(wrapper.contains(windowLink)).toEqual(true)
-  });
+    expect(wrapper.find('.sidebar-links').length).toEqual(1)
+    expect(wrapper.find('.sidebar-links').children().length).toEqual(2)
+  })
 
   it('renders the text johari window', () => {
-    const wrapper = mount(<Sidebar />);
-    const text = <h3>Johari Window</h3>
 
-    expect(wrapper.contains(text)).toEqual(true)
-  });
+    expect(wrapper.find('.sidebar-header').length).toEqual(1)
+  })
 })

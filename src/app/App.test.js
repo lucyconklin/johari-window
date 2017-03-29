@@ -1,30 +1,24 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('App', () => {
-  it('renders without crashing', () => {
-    shallow(<App />);
-  });
+
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = mount(<Router><App /></Router>)
+  })
 
   it('renders sidebar', () => {
-    const wrapper = mount(<App />);
 
     expect(wrapper.find('.Sidebar').length).toEqual(1)
   })
 
   it('renders main by default', () => {
-    const wrapper = mount(<App />);
 
     expect(wrapper.find('.Main').length).toEqual(1)
     expect(wrapper.find('.Johari').length).toEqual(0)
-  })
-
-  it('renders Johari based on state', () => {
-    const wrapper = mount(<App />);
-    wrapper.setState( { onJohari: true });
-
-    expect(wrapper.find('.Johari').length).toEqual(1)
-    expect(wrapper.find('.Main').length).toEqual(0)
   })
 })
