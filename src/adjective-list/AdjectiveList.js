@@ -12,12 +12,8 @@ class AdjectiveList extends Component {
     var that = this;
 
     fetch('https://johariwindowapi.herokuapp.com/api/v1/adjectives') 
-      .then(result => {
-        return result.json();
-      })
-      .then(data => {
-        that.setState({ adjectives: data })
-      })
+      .then(result => result.json())
+      .then(data => that.setState({ adjectives: data }))
   }
 
   eachAdjective(name, i) {
