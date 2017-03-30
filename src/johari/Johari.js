@@ -7,7 +7,7 @@ class Johari extends Component {
 
   constructor() {
     super();
-    this.state = { evaluateeName: '' };
+    this.state = { evaluateeName: '', adjectives: [] };
 
     this.submit = this.submit.bind(this);
     this.toggleAdjective = this.toggleAdjective.bind(this);
