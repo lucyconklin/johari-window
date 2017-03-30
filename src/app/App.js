@@ -10,7 +10,7 @@ const routes = [
     exact: true,
     main: () => <Main />
   },
-  { path: '/johari',
+  { path: '/johari/:id',
     main: () => <Johari />
   },
 ]

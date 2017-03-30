@@ -7,7 +7,7 @@ class Assignee extends Component {
   render() {
     return (
       <div className="Assignee">
-        <Link to='/johari'>{ this.props.name }</Link>
+        <Link to={'/johari/' + this.props.id}>{ this.props.name }</Link>
       </div>
     );
   }
