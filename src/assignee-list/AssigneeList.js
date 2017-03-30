@@ -9,11 +9,14 @@ class AssigneeList extends Component {
   }
 
   componentDidMount() {
-    this.setState({ assignees: ["Self", "Annie", "Kyle", "Drew" ]});
+    var that = this;
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/1/assignments`)
+      .then(result => result.json())
+      .then(data => that.setState({ assignees: data }))
   }
 
-  eachAssignee(name, i) {
-    return <Assignee key={i} name={name} />
+  eachAssignee(assignee, i) {
+    return <Assignee key={i} name={assignee.user.name} id={assignee.user.id} />
   }
 
   render() {
