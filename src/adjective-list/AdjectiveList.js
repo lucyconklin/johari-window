@@ -23,7 +23,6 @@ class AdjectiveList extends Component {
   render() {
     return (
       <div className='AdjectiveList'>
-        <p className='directions'>Select ten that apply.</p>
         { this.state.adjectives.map(this.eachAdjective) }
       </div>
     )

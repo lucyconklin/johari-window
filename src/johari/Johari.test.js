@@ -3,7 +3,13 @@ import { shallow, mount } from 'enzyme';
 import Johari from './Johari';
 
 describe('Johari', () => {
-  it('renders without crashing', () => {
-    shallow(<Johari />);
-  });
+
+  let wrapper;
+
+  beforeEach(() => wrapper = shallow(<Johari />))
+
+   it('renders directions', () => {
+
+    expect(wrapper.find('.directions').length).toEqual(1)
+  })
 })

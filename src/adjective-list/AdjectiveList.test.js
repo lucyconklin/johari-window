@@ -15,10 +15,4 @@ describe('AdjectiveList', () => {
 
     expect(wrapper.find('.Adjective').length).toEqual(assignedAdjectives.length)
   });
-
-  it('renders directions', () => {
-    const wrapper = shallow(<AdjectiveList/>);
-
-    expect(wrapper.find('.directions').length).toEqual(1)
-  })
 })

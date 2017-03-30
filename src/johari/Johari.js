@@ -6,6 +6,7 @@ class Johari extends Component {
   render() {
     return (
       <div className='Johari'>
+        <p className='directions'>Select ten that apply.</p>
         <AdjectiveList />
       </div>
     );
