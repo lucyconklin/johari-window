@@ -20,11 +20,11 @@ describe('Johari', () => {
 
    it('renders a submit button', () => {
 
-    expect(wrapper.find('button.johari-submit').length).toEqual(1)
+    expect(wrapper.find('.johari-submit').length).toEqual(1)
   })
 
    it('renders a cancel button', () => {
 
-    expect(wrapper.find('button.johari-cancel').length).toEqual(1)
+    expect(wrapper.find('.johari-cancel').length).toEqual(1)
   })
 })
