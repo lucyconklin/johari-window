@@ -9,10 +9,9 @@ class AssigneeList extends Component {
   }
 
   componentDidMount() {
-    var that = this;
     fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/1/assignments`)
       .then(result => result.json())
-      .then(data => that.setState({ assignees: data }))
+      .then(data => this.setState({ assignees: data }))
   }
 
   eachAssignee(assignee, i) {
