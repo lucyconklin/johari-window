@@ -6,6 +6,13 @@ class AdjectiveList extends Component {
   constructor() {
     super();
     this.state = { adjectives: [] };
+
+    this.toggleAdjective = this.toggleAdjective.bind(this);
+    this.eachAdjective = this.eachAdjective.bind(this);
+  }
+
+  toggleAdjective(adjective) {
+    this.props.toggleAdjective(adjective)
   }
 
   componentDidMount() {
@@ -17,7 +24,7 @@ class AdjectiveList extends Component {
   }
 
   eachAdjective(name, i) {
-    return <Adjective key={i} name={name} />
+    return <Adjective key={i} name={name} toggleAdjective={this.toggleAdjective} />
   }
 
   render() {
