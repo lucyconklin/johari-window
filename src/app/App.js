@@ -15,7 +15,7 @@ class App extends Component {
             <Route
               key='1'
               path='/johari/:id'
-              render={ ({match}) => <Johari id={match.params.id} /> }
+              render={ ({match}) => <Johari evaluateeID={match.params.id} /> }
             />
             <Route
               key='2'
