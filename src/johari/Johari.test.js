@@ -12,4 +12,9 @@ describe('Johari', () => {
 
     expect(wrapper.find('.directions').length).toEqual(1)
   })
+
+   it('renders title', () => {
+
+    expect(wrapper.find('.johari-title').length).toEqual(1)
+  })
 })
