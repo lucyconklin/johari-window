@@ -5,37 +5,27 @@ import Main from '../main/Main';
 import Johari from '../johari/Johari';
 import Sidebar from '../sidebar/Sidebar';
 
-const routes = [
-  { path: '/',
-    exact: true,
-    main: () => <Main />
-  },
-  { path: '/johari/:id',
-    main: () => <Johari />
-  },
-]
-
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-
-          <Sidebar />
-
-          <div>
-            { routes.map((route, index) => (
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                component={route.main}
-              />
-            ))}
+      <div className='App'>
+        <Router>
+          <div className='Router'>
+            <Sidebar />
+            <Route
+              key='1'
+              path='/johari/:id'
+              render={ ({match}) => <Johari id={match.params.id} /> }
+            />
+            <Route
+              key='2'
+              exact={true}
+              path='/'
+              render={ () => <Main /> }
+            />
           </div>
-
-        </div>
-    </Router>
+        </Router>
+      </div>
     )
   }
 }
