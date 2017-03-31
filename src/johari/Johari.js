@@ -30,7 +30,7 @@ class Johari extends Component {
   }
 
   readyToSubmit() {
-    return (this.state.adjectives.length === 1)
+    return (this.state.adjectives.length === 10)
   }
 
   getName() {
