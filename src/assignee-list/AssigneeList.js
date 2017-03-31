@@ -15,7 +15,7 @@ class AssigneeList extends Component {
   }
 
   eachAssignee(assignee, i) {
-    return <Assignee key={i} name={assignee.user.name} id={assignee.user.id} />
+    return <Assignee key={i} name={assignee.user.name} id={assignee.user.id} completed={assignee['completed?']} />
   }
 
   render() {
