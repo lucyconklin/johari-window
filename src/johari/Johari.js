@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Johari.css';
 import AdjectiveList from '../adjective-list/AdjectiveList'
+import JohariSubmit from '../johari-submit/JohariSubmit'
 import { Link } from 'react-router-dom';
 
 class Johari extends Component {
@@ -9,34 +10,27 @@ class Johari extends Component {
     super();
     this.state = { evaluateeName: '', adjectives: [] };
 
-    this.submit = this.submit.bind(this);
     this.toggleAdjective = this.toggleAdjective.bind(this);
     this.getName = this.getName.bind(this);
+    this.readyToSubmit = this.readyToSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.getName()
   }
 
   toggleAdjective(adjective) {
-    console.log(this.state.adjectives)
-    if (this.state.adjectives.includes(adjective)) {
-      const newList = this.state.adjectives.filter(name => name !== adjective)
-      this.setState({ adjectives: newList }) 
+    let adjectives = this.state.adjectives
+    if (adjectives.includes(adjective)) {
+      adjectives = adjectives.filter(name => name !== adjective)
     } else {
-      this.state.adjectives.push(adjective)
+      adjectives.push(adjective)
     }
+    this.setState({ adjectives: adjectives }) 
   }
 
-  submit() {
-    fetch(`https://johariwindowapi.herokuapp.com/api/v1/johari/${this.props.evaluateeID}/descriptions`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        johari: this.state.adjectives,
-        describer_id: '1',
-      })
-    })
-    .then(data => console.log(data))
+  readyToSubmit() {
+    return (this.state.adjectives.length === 1)
   }
 
   getName() {
@@ -46,14 +40,14 @@ class Johari extends Component {
   }
 
   render() {
-    this.getName()
     return (
       <div className='Johari'>
         <h3 className='johari-title'>Evaluate {this.state.evaluateeName}</h3>
         <p className='directions'>Select ten that apply.</p>
         <AdjectiveList toggleAdjective={this.toggleAdjective}/>
         <div className='johari-buttons'>
-          <Link onClick={this.submit} to='/' className='johari-submit'>Submit</Link>
+          <JohariSubmit adjectives={this.state.adjectives}
+          ready={this.readyToSubmit} evaluateeID={this.props.evaluateeID}/>
           <Link to='/' className='johari-cancel' >Cancel</Link>
         </div>
       </div>
