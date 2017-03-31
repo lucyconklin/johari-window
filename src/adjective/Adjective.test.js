@@ -11,6 +11,6 @@ describe('Adjective', () => {
     const wrapper = shallow(<Adjective name='religious' />);
     const checkbox = <input type="checkbox" id="religious" />;
 
-    expect(wrapper.contains(checkbox)).toEqual(true)
+    expect(wrapper.find('input').length).toEqual(1)
   })
 })
