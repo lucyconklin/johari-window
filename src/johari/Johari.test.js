@@ -3,12 +3,15 @@ import { shallow, mount } from 'enzyme';
 import Johari from './Johari';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+global.localStorage = {}
 
 describe('Johari', () => {
 
   let wrapper;
 
-  beforeEach(() => wrapper = mount(<Router><Johari /></Router>))
+  beforeEach(() => {
+    wrapper = mount(<Router><Johari /></Router>)
+  })
 
    it('renders directions', () => {
 
