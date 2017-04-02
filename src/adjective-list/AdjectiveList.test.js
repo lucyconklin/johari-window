@@ -3,15 +3,18 @@ import { shallow, mount } from 'enzyme';
 import AdjectiveList from './AdjectiveList';
 import Adjective from '../adjective/Adjective';
 
+global.localStorage = {}
+
 describe('AdjectiveList', () => {
-  it('renders without crashing', () => {
-    shallow(<AdjectiveList />);
-  });
+
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = mount(<AdjectiveList />)
+  })
 
   it('renders adjective components based on state', () => {
-    const assignedAdjectives = ['religious', 'happy', 'brave']
-    const wrapper = mount(<AdjectiveList/>);
-    wrapper.setState({ adjectives: assignedAdjectives })
+    const assignedAdjectives = ['religious', 'happy', 'brave'];    wrapper.setState({ adjectives: assignedAdjectives })
 
     expect(wrapper.find('.Adjective').length).toEqual(assignedAdjectives.length)
   });

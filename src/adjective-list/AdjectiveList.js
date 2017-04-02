@@ -11,16 +11,29 @@ class AdjectiveList extends Component {
     this.eachAdjective = this.eachAdjective.bind(this);
   }
 
-  toggleAdjective(adjective) {
-    this.props.toggleAdjective(adjective)
+  componentDidMount() {
+    if (localStorage.adjectives) { this.setAdjectivesLocally() }
+    else { this.retrieveAdjectives() }
   }
 
-  componentDidMount() {
-    var that = this;
+  setAdjectivesLocally() {
+    var adjectiveList = localStorage.getItem('adjectives').split(',')
+    this.setState({ adjectives: adjectiveList })
+  }
 
+  retrieveAdjectives() {
+    var that = this;
     fetch('https://johariwindowapi.herokuapp.com/api/v1/adjectives')
-      .then(result => result.json())
-      .then(data => that.setState({ adjectives: data }))
+        .then(result => result.json())
+        .then(data => {
+          that.setState({ adjectives: data })
+          localStorage.setItem('adjectives', data)
+          return true
+        })    
+  }
+
+  toggleAdjective(adjective) {
+    this.props.toggleAdjective(adjective)
   }
 
   eachAdjective(name, i) {

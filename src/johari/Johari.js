@@ -11,12 +11,14 @@ class Johari extends Component {
     this.state = { evaluateeName: '', adjectives: [] };
 
     this.toggleAdjective = this.toggleAdjective.bind(this);
-    this.getName = this.getName.bind(this);
+    this.retrieveNameAndSetLocally = this.retrieveNameAndSetLocally.bind(this);
     this.readyToSubmit = this.readyToSubmit.bind(this);
   }
 
   componentDidMount() {
-    this.getName()
+    var user = 'user' + this.props.evaluateeID
+    if (localStorage[user]) { this.setNameLocally(user) } 
+    else { this.retrieveNameAndSetLocally(user) }
   }
 
   toggleAdjective(adjective) {
@@ -33,10 +35,18 @@ class Johari extends Component {
     return (this.state.adjectives.length === 10)
   }
 
-  getName() {
+  retrieveNameAndSetLocally(user) {
     fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/${this.props.evaluateeID}`)
     .then(result => result.json())
-    .then(data => this.setState({ evaluateeName: data.name }))
+    .then(data => {
+      this.setState({ evaluateeName: data.name })
+      localStorage.setItem(user, data.name)
+      return true
+    })
+  }
+
+  setNameLocally(user) {
+    this.setState({ evaluateeName: localStorage[user] })
   }
 
   render() {
