@@ -11,7 +11,7 @@ class JohariSubmit extends Component {
   }
 
   submit() {
-    fetch(`https://johariwindowapi.herokuapp.com/api/v1/johari/${this.props.evaluateeID}/descriptions`, {
+    fetch(`http://johariwindowapi.herokuapp.com/api/v1/users/${this.props.evaluateeID}/descriptions`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
