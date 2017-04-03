@@ -1,0 +1,17 @@
+.Assignee {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.incomplete-asignee {
+  font-color: #777;
+}
+
+.completed-asignee {
+  font-color: #333;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none,
+}
