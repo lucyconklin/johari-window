@@ -9,7 +9,7 @@ class AssigneeList extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/1/assignments`)
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/150/assignments`)
       .then(result => result.json())
       .then(data => this.setState({ assignees: data }))
   }

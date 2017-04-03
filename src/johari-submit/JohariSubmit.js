@@ -19,7 +19,7 @@ class JohariSubmit extends Component {
       },
       body: JSON.stringify({
         johari: this.props.adjectives,
-        describer_id: '1',
+        describer_id: '150',
       })
     })
     .then(data => console.log(data))
