@@ -22,7 +22,7 @@ class JohariSubmit extends Component {
         describer_id: '150',
       })
     })
-    .then(data => console.log(data))
+    .then(data => true)
   }
 
   activeSubmit() {
