@@ -13,8 +13,7 @@
   "devDependencies": {
     "enzyme": "^2.8.0",
     "react-addons-test-utils": "^15.4.2",
-    "react-scripts": "0.9.5",
-    "selenium-webdriver": "^3.3.0"
+    "react-scripts": "0.9.5"
   },
   "scripts": {
     "build-css": "node-sass src/ -o src/",
