@@ -17,7 +17,7 @@ export default class AuthService {
   _doAuthentication(authResult) {
     // Saves the user token
     this.setToken(authResult.idToken)
-    browserHistory.replace('/home')
+    browserHistory.replace('/')
   }
 
   login() {
