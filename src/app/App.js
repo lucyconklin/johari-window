@@ -57,7 +57,6 @@ class App extends Component {
               <Route
                 key='4'
                 render={ () => <NoMatch /> }
-                onEnter={requireAuth}
                 auth={auth}
               />
             </ Switch >
