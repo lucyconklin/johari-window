@@ -1,6 +1,9 @@
 html {
-  background-color: #efefef;
+  background-color: RGB(247, 247, 247);
   color: #333; }
 
 h1 {
-  color: #555; }
+  color: RGB(128, 128, 128); }
+
+.App p {
+  background-color: #333; }
