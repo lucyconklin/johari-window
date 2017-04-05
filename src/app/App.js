@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import "./App.css"
 import AuthService from '../utils/AuthService';
-
 import Login from '../login/Login';
 import Container from '../container/Container';
 import Main from '../main/Main';
@@ -20,6 +19,12 @@ const requireAuth = (nextState, replace) => {
 }
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      user: null
+    }
+  }
 
   render() {
     return (
@@ -52,7 +57,7 @@ class App extends Component {
                 key='3'
                 path='/login'
                 auth={auth}
-                render={ () => <Login auth={auth}/> }
+                render={ () => <Login auth={auth} /> }
               />
               <Route
                 key='4'

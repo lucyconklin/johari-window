@@ -3,6 +3,13 @@ import { Redirect } from 'react-router-dom';
 import AuthService from '../utils/AuthService';
 
 export class Login extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      id_token: localStorage.getItem('id_token')
+    }
+  }
+
   static propTypes = {
     location: T.object,
     auth: T.instanceOf(AuthService)
@@ -10,9 +17,6 @@ export class Login extends React.Component {
 
   render() {
     const { auth } = this.props
-    if(localStorage.getItem('profile')){
-      return <Redirect to="/" />
-    }
     return (
       <div>
         <h2>Login</h2>
