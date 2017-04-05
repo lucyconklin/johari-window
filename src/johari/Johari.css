@@ -29,7 +29,8 @@ h1, p, h2, h3, h4 {
 .johari-cancel {
   text-decoration: none;
   color: RGB(219, 69, 69);
-  border-color: RGB(219, 69, 69); }
+  border-color: RGB(219, 69, 69);
+  text-align: center; }
 
 .johari-cancel:hover {
   color: #fff;

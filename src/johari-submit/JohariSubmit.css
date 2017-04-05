@@ -24,7 +24,8 @@ h1, p, h2, h3, h4 {
 .inactive-submit, .inactive-submit:hover {
   color: RGB(128, 128, 128);
   background-color: RGB(230, 230, 230);
-  border-color: RGB(128, 128, 128); }
+  border-color: RGB(128, 128, 128);
+  text-align: center; }
 
 .active-submit {
   background-color: #fff;
