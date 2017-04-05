@@ -1,8 +1,24 @@
 @import '../shared.sass'
 
 .Sidebar
-  width: 200px
-  border-right: 3px solid $medium-light-gray
-  position: absolute
+  width: 250px
+  border-right: 2px solid $medium-light-gray
+  position: fixed
   top: 0
   bottom: 0
+  h1
+    font-size: 24px
+    margin: 20px
+    text-shadow: RGBA(255,255,255, 0.7) 1px 1px 0
+
+.Sidebar .sidebar-links
+  margin: 20px
+  a
+    color: $medium-blue
+    text-decoration: none
+    font-family: $main-font
+    display: block
+    line-height: 24px
+    font-size: 18px
+  a:hover
+    color: $dark-blue

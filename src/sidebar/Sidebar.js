@@ -8,7 +8,7 @@ class Sidebar extends Component {
     return (
       <div className='Sidebar'>
         <div className='sidebar-header'>
-          <h3>Johari Window</h3>
+          <h1>Johari Window</h1>
         </div>
         <div className='sidebar-links'>
           <Link to='/'>Assignments</Link>

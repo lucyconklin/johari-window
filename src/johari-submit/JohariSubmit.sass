@@ -1,0 +1,21 @@
+@import '../shared.sass'
+
+.inactive-submit, .inactive-submit:hover
+  @extend .button
+  color: $medium-gray
+  background-color: $medium-light-gray
+  border-color: $medium-gray
+
+.active-submit
+  @extend .button
+  background-color: #fff
+  border-color: $medium-blue
+  a
+    text-decoration: none
+    color: $medium-blue
+
+.active-submit:hover
+  background-color: $medium-blue
+  border-color: $medium-blue
+  a
+    color: #fff

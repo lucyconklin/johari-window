@@ -1,11 +1,12 @@
 $light-gray: RGB(247, 247, 247)
-$medium-light-gray: RGB(220,220,220)
+$medium-light-gray: RGB(230,230,230)
 $medium-gray: RGB(128, 128, 128)
 $medium-dark-gray: RGB(102, 102, 102)
 $dark-gray: RGB(70,70,70)
 $light-blue: RGB(128, 171, 217)
 $medium-blue: RGB(85, 114, 179)
 $dark-blue: RGB(20, 36, 72)
+$red: RGB(219, 69, 69)
 
 $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif
 
@@ -16,3 +17,18 @@ html
 h1, p, h2, h3, h4
   font-family: $main-font
   color: $medium-gray
+
+.button
+  padding: 8px 11px
+  margin: 8px 0
+  display: block
+  width: 80px
+  color: $medium-blue
+  font-family: $main-font
+  font-weight: bold
+  border: 1px solid $medium-blue
+
+.button:hover
+  border: 1px solid $dark-blue
+  background-color: $light-blue
+  color: $dark-blue
