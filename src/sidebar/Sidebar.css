@@ -1,0 +1,14 @@
+html {
+  background-color: RGB(247, 247, 247);
+  color: RGB(70, 70, 70); }
+
+h1, p, h2, h3, h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: RGB(128, 128, 128); }
+
+.Sidebar {
+  width: 200px;
+  border-right: 3px solid RGB(220, 220, 220);
+  position: absolute;
+  top: 0;
+  bottom: 0; }

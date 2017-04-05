@@ -1,0 +1,11 @@
+html {
+  background-color: RGB(247, 247, 247);
+  color: RGB(70, 70, 70); }
+
+h1, p, h2, h3, h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: RGB(128, 128, 128); }
+
+.Main {
+  position: absolute;
+  left: 203px; }
