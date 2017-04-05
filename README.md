@@ -3,6 +3,7 @@
 
 This is a tool developed at the Turing School, based on the [Johari Window](https://en.wikipedia.org/wiki/Johari_window) Exercise developed in 1955 by Joseph Luft and Harrington Ingham. It is a front-end app that works with our Rails backend [Johari Window API](https://github.com/Dpalazzari/johari_window_api).
 
+Visit the live website [here!](https://johariwindow.herokuapp.com/)
 
 ## Getting Started
 Here is a quick guide to getting started.
