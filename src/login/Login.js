@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from 'react';
-import { Link } from 'react-router-dom';
+import { Button } from 'react-router-dom';
 import AuthService from '../utils/AuthService';
 
 export class Login extends React.Component {
@@ -11,9 +11,9 @@ export class Login extends React.Component {
   render() {
     const { auth } = this.props
     return (
-      <div className="authO">
+      <div>
         <h2>Login</h2>
-          <Link className="button" onClick={auth.login.bind(this)}>Login</Link>
+        <button onClick={auth.login.bind(this)}>Login</button>
       </div>
     )
   }

@@ -13,11 +13,17 @@ import MyWindow from '../my-window/MyWindow';
 
 const auth = new AuthService('jH67SpOvPqTg0Jal6m49SCGdECSsFI4L', 'joahriwindow.auth0.com');
 
+const requireAuth = (nextState, replace) => {
+  if (!auth.loggedIn()) {      
+    replace({ pathname: '/login' })
+  }
+}
+
 class App extends Component {
+
   render() {
     return (
       <div className='App'>
-
         <Router>
           <div className='Router'>
             <Sidebar />
@@ -26,6 +32,8 @@ class App extends Component {
                 key='1'
                 path='/johari/:id'
                 render={ ({match}) => <Johari evaluateeID={match.params.id} /> }
+                onEnter={requireAuth}
+                auth={auth}
               />
               <Route
                 key='3'
@@ -37,15 +45,20 @@ class App extends Component {
                 exact={true}
                 path='/'
                 render={ () => <Main /> }
+                onEnter={requireAuth}
+                auth={auth}
               />
               <Route
                 key='3'
                 path='/login'
-                render={ () => <Login /> }
+                auth={auth}
+                render={ () => <Login auth={auth}/> }
               />
               <Route
                 key='4'
                 render={ () => <NoMatch /> }
+                onEnter={requireAuth}
+                auth={auth}
               />
             </ Switch >
           </div>
