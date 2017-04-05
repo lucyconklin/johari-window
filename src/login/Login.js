@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from 'react';
-import { Button } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import AuthService from '../utils/AuthService';
 
 export class Login extends React.Component {
@@ -10,6 +10,9 @@ export class Login extends React.Component {
 
   render() {
     const { auth } = this.props
+    if(localStorage.getItem('profile')){
+      return <Redirect to="/" />
+    }
     return (
       <div>
         <h2>Login</h2>
