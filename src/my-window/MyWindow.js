@@ -23,11 +23,15 @@ class MyWindow extends Component {
     fetch('https://johariwindowapi.herokuapp.com/api/v1/users/1/descriptions')
       .then(result => result.json() )
       .then(data => {
-        this.state.myWindow['arena'] = data['arena']
-        this.state.myWindow['facade'] = data['facade']
-        this.state.myWindow['blindSpot'] = data['blind-spot']
-        this.state.myWindow['unknown'] = data['unknown']
-        this.setState( this.state )
+
+        this.setState({
+          myWindow: {
+            arena: data['arena'],
+            facade: data['facade'],
+            blindSpot: data['blind-spot'],
+            unknown: data['unknown']
+          }}
+        )
         return true
       })
   }
