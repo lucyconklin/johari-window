@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import "./App.css"
 import AuthService from '../utils/AuthService';
 import Login from '../login/Login';
-import Container from '../container/Container';
 import Main from '../main/Main';
 import Johari from '../johari/Johari';
 import Sidebar from '../sidebar/Sidebar';
