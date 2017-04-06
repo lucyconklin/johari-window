@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './MyWindow.css';
+import MyWindowAdjective from '../my-window-adjective/MyWindowAdjective'
 
 class MyWindow extends Component {
   constructor() {
@@ -32,21 +33,48 @@ class MyWindow extends Component {
   }
 
   render() {
+
+    const arenaAdjectiveList = this.state.myWindow.arena.map((adjective, i) => {
+      return <MyWindowAdjective key={i} name={adjective.name} frequency={adjective.frequency} />
+    })
+
+    const blindSpotAdjectiveList = this.state.myWindow.blindSpot.map((adjective, i) => {
+      return <MyWindowAdjective key={i} name={adjective.name} frequency={adjective.frequency} />
+    })
+
+    const facadeAdjectiveList = this.state.myWindow.facade.map((adjective, i) => {
+      return <MyWindowAdjective key={i} name={adjective.name} frequency={adjective.frequency} />
+    })
+
+    const unKnownAdjectiveList = this.state.myWindow.unknown.map((adjective, i) => {
+      return <MyWindowAdjective key={i} name={adjective.name} frequency={adjective.frequency} />
+    })
+
     return (
       <div className='MyWindow'>
         <h2>My Window</h2>
         <div className='johari-window'>
           <table>
-          <tbody>
-            <tr>
-              <td className="johari-windowpane-title">Arena</td>
-              <td className="johari-windowpane-title">Blind Spot</td>
-            </tr>
-            <tr>
-              <td className="johari-windowpane-title">Fa&#231;ade</td>
-              <td className="johari-windowpane-title">Unknown</td>
-            </tr>
-          </tbody>
+            <tbody>
+              <tr>
+                <td className="johari-windowpane-title">
+                <h4>Arena</h4>
+                { arenaAdjectiveList }
+                </td>
+                <td className="johari-windowpane-title">
+                <h4>Blind Spot</h4>
+                { blindSpotAdjectiveList }</td>
+              </tr>
+              <tr>
+                <td className="johari-windowpane-title">
+                <h4>Fa&#231;ade</h4>
+                { facadeAdjectiveList }</td>
+                <td className="johari-windowpane-title">
+                  <h4>Unknown</h4>
+                  { unKnownAdjectiveList }
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
