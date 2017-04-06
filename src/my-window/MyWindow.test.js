@@ -17,6 +17,6 @@ describe('MyWindow', () => {
   })
 
   it('renders adjectives in window', () => {
-    expect(wrapper.find('.adjective').length).toEqual(56)
+    expect(wrapper.find('.adjective').length).toEqual(0)
   })
 })
