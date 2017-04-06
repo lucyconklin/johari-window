@@ -1,0 +1,48 @@
+html {
+  background-color: RGB(247, 247, 247);
+  color: RGB(70, 70, 70); }
+
+h1, p, h2, h3, h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: RGB(128, 128, 128); }
+
+.button {
+  padding: 8px 11px;
+  margin: 8px 0;
+  display: block;
+  width: 80px;
+  color: RGB(85, 114, 179);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: 1px solid RGB(85, 114, 179); }
+
+.button:hover {
+  border: 1px solid RGB(20, 36, 72);
+  background-color: RGB(128, 171, 217);
+  color: RGB(20, 36, 72); }
+
+.Sidebar {
+  width: 250px;
+  border-right: 2px solid RGB(230, 230, 230);
+  position: fixed;
+  top: 0;
+  bottom: 0; }
+
+.Sidebar h1 {
+  font-size: 24px;
+  margin: 20px;
+  text-shadow: RGBA(255, 255, 255, 0.7) 1px 1px 0; }
+
+.Sidebar .sidebar-links {
+  margin: 20px; }
+
+.Sidebar .sidebar-links a {
+  color: RGB(85, 114, 179);
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  line-height: 24px;
+  font-size: 18px; }
+
+.Sidebar .sidebar-links a:hover {
+  color: RGB(20, 36, 72); }

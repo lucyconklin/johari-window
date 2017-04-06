@@ -1,0 +1,43 @@
+html {
+  background-color: RGB(247, 247, 247);
+  color: RGB(70, 70, 70); }
+
+h1, p, h2, h3, h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: RGB(128, 128, 128); }
+
+.button, .inactive-submit, .inactive-submit:hover, .active-submit {
+  padding: 8px 11px;
+  margin: 8px 0;
+  display: block;
+  width: 80px;
+  color: RGB(85, 114, 179);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: 1px solid RGB(85, 114, 179); }
+
+.button:hover, .inactive-submit:hover, .active-submit:hover {
+  border: 1px solid RGB(20, 36, 72);
+  background-color: RGB(128, 171, 217);
+  color: RGB(20, 36, 72); }
+
+.inactive-submit, .inactive-submit:hover {
+  color: RGB(128, 128, 128);
+  background-color: RGB(230, 230, 230);
+  border-color: RGB(128, 128, 128);
+  text-align: center; }
+
+.active-submit {
+  background-color: #fff;
+  border-color: RGB(85, 114, 179); }
+
+.active-submit a {
+  text-decoration: none;
+  color: RGB(85, 114, 179); }
+
+.active-submit:hover {
+  background-color: RGB(85, 114, 179);
+  border-color: RGB(85, 114, 179); }
+
+.active-submit:hover a {
+  color: #fff; }
