@@ -1,0 +1,16 @@
+@import '../shared.sass'
+
+.Assignee
+  line-height: 30px
+
+.Assignee.incomplete-assignee
+  line-height: 30px
+  a
+    text-decoration: none
+    color: $medium-blue
+  a:hover
+    color: $dark-blue
+    text-decoration: underline
+
+.Assignee.completed-assignee
+  color: $medium-gray
