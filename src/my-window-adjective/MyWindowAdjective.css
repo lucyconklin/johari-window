@@ -22,4 +22,8 @@ h1, p, h2, h3, h4 {
   color: RGB(20, 36, 72); }
 
 .johari-window-adjective {
-  color: RGB(70, 70, 70); }
+  color: RGB(70, 70, 70);
+  line-height: 24px;
+  width: 150px;
+  display: inline-block;
+  text-align: left; }

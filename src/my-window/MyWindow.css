@@ -26,6 +26,9 @@ h1, p, h2, h3, h4 {
   left: 253px;
   padding: 20px; }
 
+.johari-window {
+  background-color: #fff; }
+
 .johari-window table {
   border-collapse: collapse; }
 
