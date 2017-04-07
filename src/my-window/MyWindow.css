@@ -30,8 +30,8 @@ h1, p, h2, h3, h4 {
   border-collapse: collapse; }
 
 .johari-window td {
-  height: 250px;
-  width: 250px;
+  height: 350px;
+  width: 350px;
   border: 2px solid RGB(230, 230, 230); }
 
 .johari-window td.johari-windowpane-title {
