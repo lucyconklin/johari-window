@@ -30,12 +30,14 @@ h1, p, h2, h3, h4 {
 .active-submit {
   background-color: #fff;
   border-color: RGB(85, 114, 179); }
-  .active-submit a {
-    text-decoration: none;
-    color: RGB(85, 114, 179); }
+
+.active-submit a {
+  text-decoration: none;
+  color: RGB(85, 114, 179); }
 
 .active-submit:hover {
   background-color: RGB(85, 114, 179);
   border-color: RGB(85, 114, 179); }
-  .active-submit:hover a {
-    color: #fff; }
+
+.active-submit:hover a {
+  color: #fff; }
