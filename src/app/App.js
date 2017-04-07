@@ -6,6 +6,7 @@ import Main from '../main/Main';
 import Johari from '../johari/Johari';
 import Sidebar from '../sidebar/Sidebar';
 import NoMatch from '../no-match/NoMatch';
+import MyWindow from '../my-window/MyWindow';
 
 class App extends Component {
   render() {
@@ -22,13 +23,18 @@ class App extends Component {
                 render={ ({match}) => <Johari evaluateeID={match.params.id} /> }
               />
               <Route
+              key='3'
+              path='/mywindow'
+              render={ () => <MyWindow /> }
+              />
+              <Route
                 key='2'
                 exact={true}
                 path='/'
                 render={ () => <Main /> }
               />
               <Route
-                key='3'
+                key='4'
                 render={ () => <NoMatch /> }
               />
             </ Switch >

@@ -21,6 +21,11 @@ h1, p, h2, h3, h4 {
   background-color: RGB(128, 171, 217);
   color: RGB(20, 36, 72); }
 
+html {
+  background-color: #efefef;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 body {
   height: 100%;
   margin: 0;

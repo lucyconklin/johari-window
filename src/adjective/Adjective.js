@@ -15,7 +15,7 @@ class Adjective extends Component {
   render() {
     return (
       <div className='Adjective'>
-        <input type="checkbox" id={ this.props.name } onClick={this.toggleAdjective} />
+        <input type="checkbox" className='checkbox' id={ this.props.name } onClick={this.toggleAdjective} />
         <label htmlFor={ this.props.name }>{ this.props.name }</label>
       </div>
     )
