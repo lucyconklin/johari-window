@@ -30,7 +30,7 @@ class App extends Component {
       <div className='App'>
         <Router>
           <div className='Router'>
-            <Sidebar />
+            <Sidebar auth={auth} />
             <Switch>
               <Route
                 key='1'

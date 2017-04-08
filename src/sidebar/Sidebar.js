@@ -1,10 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes as T } from 'react';
 import { Link } from 'react-router-dom';
-
+import AuthService from '../utils/AuthService';
 import './Sidebar.css';
 
 class Sidebar extends Component {
+  static propTypes = {
+    location: T.object,
+    auth: T.instanceOf(AuthService)
+  }
+
+
   render() {
+    const { auth } = this.props
+  
     return (
       <div className='Sidebar'>
         <div className='sidebar-header'>
@@ -13,6 +21,7 @@ class Sidebar extends Component {
         <div className='sidebar-links'>
           <Link to='/'>Assignments</Link>
           <Link to='/mywindow'>My Window</Link>
+          <button onClick={auth.logout.bind(this)}>Log Out</button>
         </div>
       </div>
     );

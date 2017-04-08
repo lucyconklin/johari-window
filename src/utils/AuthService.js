@@ -1,14 +1,13 @@
 import Auth0Lock from 'auth0-lock'
 import { isTokenExpired } from './jwtHelper'
 import { EventEmitter } from 'events'
-import { browserHistory } from 'react-router-dom'
 
 export default class AuthService extends EventEmitter {
   constructor(clientId, domain) {
     super()
     this.lock = new Auth0Lock(clientId, domain, {
       auth: {
-        redirectUrl: 'http://localhost:3000/login',
+        redirectUrl: 'http://localhost:3000',
         responseType: 'token'
       }
     })
@@ -20,7 +19,6 @@ export default class AuthService extends EventEmitter {
   _doAuthentication(authResult) {
     // Saves the user token
     this.setToken(authResult.idToken)
-    browserHistory.replace('/home')
     this.lock.getProfile(authResult.idToken, (error, profile) => {
       if (error) {
         console.log('Error loading the Profile', error)
