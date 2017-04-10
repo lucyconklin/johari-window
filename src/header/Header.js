@@ -8,7 +8,7 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    this.setState({ name: JSON.parse(localStorage.getItem('profile')).name });
+   this.setState({ name: this.props.user.name });
   }
   
   render() {

@@ -1,13 +1,18 @@
 import Auth0Lock from 'auth0-lock'
+import { withRouter } from 'react-router-dom'
 import { isTokenExpired } from './jwtHelper'
 import { EventEmitter } from 'events'
+
+const Redirect = withRouter(({history}) => {
+  history.push('/')
+}) 
 
 export default class AuthService extends EventEmitter {
   constructor(clientId, domain) {
     super()
     this.lock = new Auth0Lock(clientId, domain, {
       auth: {
-        redirectUrl: 'http://localhost:3000',
+        redirectUrl: 'http://localhost:3000/login',
         responseType: 'token'
       }
     })
@@ -26,6 +31,7 @@ export default class AuthService extends EventEmitter {
         this.setProfile(profile)
       }
     })
+    Redirect()
   }
 
   login() {

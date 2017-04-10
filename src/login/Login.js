@@ -1,6 +1,7 @@
 import React, { PropTypes as T } from 'react';
 import { withRouter } from 'react-router-dom';
 import AuthService from '../utils/AuthService';
+import './Login.css'
 
 export class Login extends React.Component {
   static propTypes = {
@@ -13,7 +14,8 @@ export class Login extends React.Component {
     const { auth } = this.props
 
     const onAuthRedirect = (history) => {
-      auth.login(this).on('profile_updated', history.push('/'))
+      auth.login(this)
+      history.push('/')
     }
 
     const LoginButton = withRouter(({ history }) => (
@@ -22,7 +24,7 @@ export class Login extends React.Component {
     ))
     
     return (
-      <div>
+      <div className='Login'>
         <h2>Login</h2>
         <LoginButton />
       </div>
