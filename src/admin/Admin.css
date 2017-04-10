@@ -21,17 +21,16 @@ h1, p, h2, h3, h4 {
   background-color: RGB(128, 171, 217);
   color: RGB(20, 36, 72); }
 
-.Assignee {
-  line-height: 30px; }
-
-.Assignee.incomplete-assignee {
-  line-height: 30px; }
-  .Assignee.incomplete-assignee a {
+.Admin {
+  position: absolute;
+  left: 253px;
+  padding: 20px; }
+  .Admin a {
+    color: RGB(85, 114, 179);
     text-decoration: none;
-    color: RGB(85, 114, 179); }
-  .Assignee.incomplete-assignee a:hover {
-    color: RGB(20, 36, 72);
-    text-decoration: underline; }
-
-.Assignee.completed-assignee {
-  color: RGB(128, 128, 128); }
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    line-height: 24px;
+    font-size: 18px; }
+  .Admin a:hover {
+    color: RGB(20, 36, 72); }
