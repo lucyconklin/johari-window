@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "auth0-lock": "^10.14.0",
+    "axios": "^0.16.1",
+    "jwt-decode": "^2.2.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
-    "auth0-lock": "^10.14.0",
-    "jwt-decode": "^2.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^4.0.0",

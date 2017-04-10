@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import AuthService from '../utils/AuthService';
+import Axios from 'axios';
 import Login from '../login/Login';
 import Main from '../main/Main';
 import Johari from '../johari/Johari';
@@ -11,9 +12,9 @@ import "./App.css"
 
 const auth = new AuthService('jH67SpOvPqTg0Jal6m49SCGdECSsFI4L', 'joahriwindow.auth0.com');
 
-const requireAuth = (nextState, replace) => {
-  if (!auth.loggedIn()) {      
-    replace({ pathname: '/login' }) 
+const requireAuth = () => {
+  if (!auth.loggedIn()) {
+    <Redirect to='/login' />
   }
 }
 
@@ -21,23 +22,32 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      user: {} 
+      user: {},
+      redirectToLogin: true
     }
-    this.setUser(localStorage.getItem('profile'))
   }
 
-  setUser(profile) {
+  componentDidMount() {
+    this.setUser(localStorage.getItem('profile'), localStorage.getItem('id_token'))
+  }
+
+  setUser(profile, token) {
     if(profile) {
-      let username = JSON.parse(profile).nickname
-      fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/by_github?name=${username}`)
-        .then(result => result.json() )
-        .then(data => { 
+      let parsed_profile = JSON.parse(profile)
+      let user_info = {"user": {"name": parsed_profile.name, "github": parsed_profile.nickname, "token": token}}
+      Axios.post('https://johariwindowapi.herokuapp.com/api/v1/users', JSON.stringify(user_info))
+        .then(result => {
+          let user_response = result.json()
+          return console.log(user_response)
+        })
+        .then(data => {
           this.setState({user: data})
           return true
         })
-    } 
+        .catch(error => console.log(error))
+    }
   }
-  
+
   render() {
     return (
       <div className='App'>
@@ -48,20 +58,20 @@ class App extends Component {
               <Route
                 key='1'
                 path='/johari/:id'
-                onEnter={requireAuth} 
+                onEnter={requireAuth()}
                 render={ ({match}) => <Johari evaluateeID={match.params.id} user={this.props.user}/> }
               />
               <Route
                 key='3'
                 path='/mywindow'
-                onEnter={requireAuth} 
+                onEnter={requireAuth()}
                 render={ () => <MyWindow user={this.props.user}/> }
               />
               <Route
                 key='2'
                 exact={true}
                 path='/'
-                onEnter={requireAuth} 
+                onEnter={requireAuth()}
                 render={ () => <Main user={this.props.user}/> }
               />
               <Route
@@ -72,7 +82,6 @@ class App extends Component {
               <Route
                 key='4'
                 render={ () => <NoMatch /> }
-                auth={auth}
               />
             </ Switch >
           </div>
