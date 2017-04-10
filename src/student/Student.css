@@ -1,0 +1,40 @@
+html {
+  background-color: RGB(247, 247, 247);
+  color: RGB(70, 70, 70); }
+
+h1, p, h2, h3, h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: RGB(128, 128, 128); }
+
+.button {
+  padding: 8px 11px;
+  margin: 8px 0;
+  display: block;
+  width: 80px;
+  color: RGB(85, 114, 179);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: 1px solid RGB(85, 114, 179); }
+
+.button:hover {
+  border: 1px solid RGB(20, 36, 72);
+  background-color: RGB(128, 171, 217);
+  color: RGB(20, 36, 72); }
+
+label {
+  line-height: 30px;
+  vertical-align: center; }
+
+.Student {
+  width: 300px;
+  display: inline-block; }
+
+input[type=checkbox] {
+  margin-right: 8px;
+  height: 15px;
+  width: 15px;
+  line-height: 24px; }
+
+input[type=checkbox]:checked + label {
+  color: RGB(85, 114, 179);
+  font-weight: bold; }
