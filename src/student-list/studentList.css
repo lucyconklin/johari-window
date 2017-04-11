@@ -20,3 +20,10 @@ h1, p, h2, h3, h4 {
   border: 1px solid RGB(20, 36, 72);
   background-color: RGB(128, 171, 217);
   color: RGB(20, 36, 72); }
+
+.StudentList {
+  position: absolute;
+  left: 253px;
+  padding: 20px;
+  width: 600px;
+  border-right: 2px solid RGB(230, 230, 230); }

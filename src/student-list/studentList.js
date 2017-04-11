@@ -3,7 +3,7 @@ import './studentList.css';
 import Student from '../student/Student';
 
 
-class StudentList extends Component {
+class studentList extends Component {
   constructor(){
     super();
     this.state = {students: []};
@@ -18,7 +18,6 @@ class StudentList extends Component {
     fetch('https://johariwindowapi.herokuapp.com/api/v1/cohorts/' + that.props.cohortID + '/users')
       .then(result => result.json())
       .then(data => {
-        console.log(data)
         that.setState({ students: data })
         return true
     })
@@ -39,4 +38,4 @@ class StudentList extends Component {
   }
 }
 
-export default StudentList;
+export default studentList;
