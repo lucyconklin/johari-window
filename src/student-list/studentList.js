@@ -6,23 +6,13 @@ import SubmitGroup from '../submit-group/SubmitGroup';
 class StudentList extends Component {
   constructor(){
     super();
-    this.state = {students: []};
-    this.eachStudent = this.eachStudent.bind(this)
-    this.toggleStudent = this.toggleStudent.bind(this)
+    this.eachStudent = this.eachStudent.bind(this);
+    this.toggleStudent = this.toggleStudent.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
-  componentDidMount(){
-    this.retrieveStudents();
-  }
-
-  retrieveStudents(){
-    var that = this;
-    fetch('https://johariwindowapi.herokuapp.com/api/v1/cohorts/' + that.props.cohortID + '/users')
-      .then(result => result.json())
-      .then(data => {
-        that.setState({ students: data })
-        return true
-    })
+  submit(){
+    this.props.submit()
   }
 
   toggleStudent(student){
@@ -30,7 +20,7 @@ class StudentList extends Component {
   }
 
   eachStudent(student, i){
-    return <Student key={i} name={student.name} id={student.id} toggleStudent={this.toggleStudent} />
+    return <Student key={student.id} name={student.name} id={student.id} toggleStudent={this.toggleStudent} />
   }
 
   render() {
@@ -38,9 +28,9 @@ class StudentList extends Component {
       <div className='StudentList'>
         <h1>Select students to create groups.</h1>
         <div className='student-list'>
-          { this.state.students.map(this.eachStudent) }
+          { this.props.students.map(this.eachStudent) }
         </div>
-        <SubmitGroup />
+        <SubmitGroup submit={this.submit} />
       </div>
     );
   }
