@@ -22,7 +22,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      user: {},
+      user: { user: true },
       redirectToLogin: true
     }
   }
@@ -35,14 +35,12 @@ class App extends Component {
     if(profile) {
       let parsed_profile = JSON.parse(profile)
       let user_info = {"user": {"name": parsed_profile.name, "github": parsed_profile.nickname, "token": token}}
-      Axios.post('https://johariwindowapi.herokuapp.com/api/v1/users', user_info)
+      Axios.post('http://localhost:5000/api/v1/users', user_info)
         .then(result => {
-          let user_response = result.json()
-          return console.log(user_response)
-        })
-        .then(data => {
-          this.setState({user: data})
-          return true
+          console.log(result)
+          let user_response = result.data
+          this.setState({user: user_response})
+          console.log(this.state.user)
         })
         .catch(error => console.log(error))
     }
