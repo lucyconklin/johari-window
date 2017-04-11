@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './StudentList.css';
 import Student from '../student/Student';
-
+import SubmitGroup from '../submit-group/SubmitGroup';
 
 class StudentList extends Component {
   constructor(){
@@ -33,6 +33,7 @@ class StudentList extends Component {
         <div className='student-list'>
           { this.state.students.map(this.eachStudent) }
         </div>
+        <SubmitGroup />
       </div>
     );
   }
