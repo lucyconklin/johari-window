@@ -20,7 +20,7 @@ class MyWindow extends Component {
   }
 
   getMyWindow () {
-    fetch('https://johariwindowapi.herokuapp.com/api/v1/users/1/descriptions')
+    fetch('https://johariwindowapi.herokuapp.com/api/v1/users/150/descriptions')
       .then(result => result.json() )
       .then(data => {
 
