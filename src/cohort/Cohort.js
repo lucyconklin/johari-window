@@ -11,6 +11,20 @@ class Cohort extends Component {
     this.submit = this.submit.bind(this);
     this.delete = this.delete.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.post = this.post.bind(this);
+  }
+
+  post(){
+    console.log(JSON.stringify(this.state.groups))
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/assignments`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({group: this.state.groups})
+    })
+    .then(data => true)
   }
 
   delete(group){
@@ -99,8 +113,8 @@ class Cohort extends Component {
   render() {
     return (
       <div className='Cohort'>
-        <StudentList cohortID={this.props.cohortID} toggleStudent={this.toggleStudent} submit={this.submit} students={this.state.students}/>
-        <GroupList groups={this.state.groups} delete={this.delete}/>
+        <StudentList cohortID={this.props.cohortID} toggleStudent={this.toggleStudent} submit={this.submit} students={this.state.students} />
+        <GroupList groups={this.state.groups} delete={this.delete} post={this.post} />
       </div>
     );
   }
