@@ -9,7 +9,7 @@ export class Login extends React.Component {
     auth: T.instanceOf(AuthService)
   }
 
-  
+
   render() {
     const { auth } = this.props
 
@@ -19,10 +19,10 @@ export class Login extends React.Component {
     }
 
     const LoginButton = withRouter(({ history }) => (
-      <button 
+      <button
         onClick={() => onAuthRedirect(history)}>Login</button>
     ))
-    
+
     return (
       <div className='Login'>
         <h2>Login</h2>

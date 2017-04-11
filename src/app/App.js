@@ -35,7 +35,7 @@ class App extends Component {
     if(profile) {
       let parsed_profile = JSON.parse(profile)
       let user_info = {"user": {"name": parsed_profile.name, "github": parsed_profile.nickname, "token": token}}
-      Axios.post('https://johariwindowapi.herokuapp.com/api/v1/users', JSON.stringify(user_info))
+      Axios.post('https://johariwindowapi.herokuapp.com/api/v1/users', user_info)
         .then(result => {
           let user_response = result.json()
           return console.log(user_response)

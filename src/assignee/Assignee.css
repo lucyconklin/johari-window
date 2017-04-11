@@ -26,12 +26,14 @@ h1, p, h2, h3, h4 {
 
 .Assignee.incomplete-assignee {
   line-height: 30px; }
-  .Assignee.incomplete-assignee a {
-    text-decoration: none;
-    color: RGB(85, 114, 179); }
-  .Assignee.incomplete-assignee a:hover {
-    color: RGB(20, 36, 72);
-    text-decoration: underline; }
+
+.Assignee.incomplete-assignee a {
+  text-decoration: none;
+  color: RGB(85, 114, 179); }
+
+.Assignee.incomplete-assignee a:hover {
+  color: RGB(20, 36, 72);
+  text-decoration: underline; }
 
 .Assignee.completed-assignee {
   color: RGB(128, 128, 128); }
