@@ -6,7 +6,7 @@ h1, p, h2, h3, h4 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: RGB(128, 128, 128); }
 
-.button {
+.button, .DeleteGroup {
   padding: 8px 11px;
   margin: 8px 0;
   display: block;
@@ -16,14 +16,19 @@ h1, p, h2, h3, h4 {
   font-weight: bold;
   border: 1px solid RGB(85, 114, 179); }
 
-.button:hover {
+.button:hover, .DeleteGroup:hover {
   border: 1px solid RGB(20, 36, 72);
   background-color: RGB(128, 171, 217);
   color: RGB(20, 36, 72); }
 
-.Group {
-  border: 2px solid RGB(230, 230, 230);
-  border-top: 1px solid RGB(230, 230, 230);
-  border-bottom: 1px solid RGB(230, 230, 230);
-  padding-left: 5px;
-  width: 200px; }
+.DeleteGroup {
+  text-decoration: none;
+  color: RGB(219, 69, 69);
+  border-color: RGB(219, 69, 69);
+  text-align: center; }
+
+.DeleteGroup:hover {
+  color: #fff;
+  background-color: RGB(219, 69, 69);
+  border-color: RGB(219, 69, 69);
+  cursor: pointer; }

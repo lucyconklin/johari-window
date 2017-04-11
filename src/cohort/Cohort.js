@@ -9,6 +9,30 @@ class Cohort extends Component {
     this.state = {checkedStudents: [], groups: [], students: []};
     this.toggleStudent = this.toggleStudent.bind(this);
     this.submit = this.submit.bind(this);
+    this.delete = this.delete.bind(this);
+    this.addToList = this.addToList.bind(this);
+  }
+
+  delete(group){
+    var groups = this.state.groups
+    this.addToList(group);
+    let id = group[0].id
+    for(var i = groups.length - 1; i > -1; i--){
+      for(var j = groups[i].length - 1; j > -1; j--){
+        if(groups[i][j].id === id){
+          groups.splice(i,1)
+        }
+      }
+    }
+    this.setState({groups: groups})
+  }
+
+  addToList(group){
+    var students = this.state.students;
+    group.forEach((element) => {
+      students.push(element)
+    })
+    this.setState({students: students})
   }
 
   componentDidMount(){
@@ -27,9 +51,13 @@ class Cohort extends Component {
 
   submit(){
     var groups = this.state.groups;
-    groups.push(this.state.checkedStudents);
-    this.removeStudentsFromList(this.state.checkedStudents);
-    this.setState({groups: groups, checkedStudents: []});
+    let checkedStudents = this.state.checkedStudents
+    if(checkedStudents.length > 0){
+      groups.push(checkedStudents);
+      this.removeStudentsFromList(checkedStudents);
+      this.setState({groups: groups, checkedStudents: []});
+    }
+
   }
 
   toggleStudent(student){
@@ -72,7 +100,7 @@ class Cohort extends Component {
     return (
       <div className='Cohort'>
         <StudentList cohortID={this.props.cohortID} toggleStudent={this.toggleStudent} submit={this.submit} students={this.state.students}/>
-        <GroupList groups={this.state.groups}/>
+        <GroupList groups={this.state.groups} delete={this.delete}/>
       </div>
     );
   }
