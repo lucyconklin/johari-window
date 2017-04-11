@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './studentList.css';
+import './StudentList.css';
 import Student from '../student/Student';
 
 
-class studentList extends Component {
+class StudentList extends Component {
   constructor(){
     super();
     this.state = {students: []};
@@ -38,4 +38,4 @@ class studentList extends Component {
   }
 }
 
-export default studentList;
+export default StudentList;

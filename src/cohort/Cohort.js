@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Cohort.css';
-import StudentList from '../student-list/studentList';
+import StudentList from '../student-list/StudentList';
+import GroupList from '../group-list/GroupList';
 
 class Cohort extends Component {
 
@@ -8,6 +9,7 @@ class Cohort extends Component {
     return (
       <div className='Cohort'>
         <StudentList cohortID={this.props.cohortID} />
+        <GroupList />
       </div>
     );
   }
