@@ -25,12 +25,14 @@ h1, p, h2, h3, h4 {
   background-color: #fff;
   border-color: RGB(2, 94, 2);
   width: 140px; }
-  .PostGroup a {
-    text-decoration: none;
-    color: RGB(2, 94, 2); }
+
+.PostGroup a {
+  text-decoration: none;
+  color: RGB(2, 94, 2); }
 
 .PostGroup:hover {
   background-color: RGB(2, 94, 2);
   border-color: RGB(2, 94, 2); }
-  .PostGroup:hover a {
-    color: #fff; }
+
+.PostGroup:hover a {
+  color: #fff; }
