@@ -7,6 +7,8 @@ class StudentList extends Component {
   constructor(){
     super();
     this.state = {students: []};
+    this.eachStudent = this.eachStudent.bind(this)
+    this.toggleStudent = this.toggleStudent.bind(this)
   }
 
   componentDidMount(){
@@ -23,9 +25,14 @@ class StudentList extends Component {
     })
   }
 
-  eachStudent(student, i){
-    return <Student key={i} name={student.name} id={student.id} />
+  toggleStudent(student){
+    this.props.toggleStudent(student);
   }
+
+  eachStudent(student, i){
+    return <Student key={i} name={student.name} id={student.id} toggleStudent={this.toggleStudent} />
+  }
+
   render() {
     return (
       <div className='StudentList'>
