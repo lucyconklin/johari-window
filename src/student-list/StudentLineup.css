@@ -21,7 +21,7 @@ h1, p, h2, h3, h4 {
   background-color: RGB(128, 171, 217);
   color: RGB(20, 36, 72); }
 
-.StudentList {
+.StudentLineup {
   position: absolute;
   left: 253px;
   padding: 20px;

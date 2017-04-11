@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Cohort.css';
-import StudentList from '../student-list/StudentList';
+import StudentLineup from '../student-list/StudentLineup';
 import GroupList from '../group-list/GroupList';
 
 class Cohort extends Component {
@@ -113,7 +113,7 @@ class Cohort extends Component {
   render() {
     return (
       <div className='Cohort'>
-        <StudentList cohortID={this.props.cohortID} toggleStudent={this.toggleStudent} submit={this.submit} students={this.state.students} />
+        <StudentLineup cohortID={this.props.cohortID} toggleStudent={this.toggleStudent} submit={this.submit} students={this.state.students} />
         <GroupList groups={this.state.groups} delete={this.delete} post={this.post} />
       </div>
     );

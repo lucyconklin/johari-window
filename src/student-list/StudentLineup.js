@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './StudentList.css';
+import './StudentLineup.css';
 import Student from '../student/Student';
 import SubmitGroup from '../submit-group/SubmitGroup';
 
-class StudentList extends Component {
+class StudentLineup extends Component {
   constructor(){
     super();
     this.eachStudent = this.eachStudent.bind(this);
@@ -25,7 +25,7 @@ class StudentList extends Component {
 
   render() {
     return (
-      <div className='StudentList'>
+      <div className='StudentLineup'>
         <h1>Select students to create groups.</h1>
         <div className='student-list'>
           { this.props.students.map(this.eachStudent) }
@@ -36,4 +36,4 @@ class StudentList extends Component {
   }
 }
 
-export default StudentList;
+export default StudentLineup;
