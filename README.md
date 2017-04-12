@@ -5,6 +5,8 @@ This is a tool developed at the Turing School, based on the [Johari Window](http
 
 Visit the live website [here!](https://johariwindow.herokuapp.com/)
 
+Check out the [Consideration docs](CONSIDERATIONS.md) for user accessibility details!
+
 ## Getting Started
 Here is a quick guide to getting started.
 
@@ -26,13 +28,25 @@ OR
 
 ## Development Environment
 
+After getting started, to run the app locally, just type `npm start` into the command line. The app should automatically be opened in your browser. Peruse at your pleasure!
+
+You will have to create your own [back-end application](https://github.com/Dpalazzari/johari_window_api) and scope the CORS requirements in order for it to have full functionality with the backend API.
+
 ## Production Environment
 
-Check out the [Consideration docs](CONSIDERATIONS.md) for user accessibility details!
+You will also have to scope your back-end app for the production site as well. Be sure to set up your application through [AuthO](https://auth0.com/) and follow the instructions to get user login functionality.
+
+After that, once you push both apps to production, it should function just fine.
 
 ## Common Issues
 
+Don't clean out your localStorage if you can help it. If you don't know what that is, that's great! If you do, try not to mess with it.
+
 ## Going Forward
+
+- The projects ability to login and redirect certain components needs to be refined.
+
+- Once the site is up and functional, we want all Turing students to login to the app. Then, they can start using it for every group project they participate in at Turing!
 
 ## Primary Contributors
 
