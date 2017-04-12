@@ -23,7 +23,7 @@ export default class AuthService extends EventEmitter {
         this.setProfile(profile)
       }
     })
-    
+
   }
 
   login() {
@@ -56,5 +56,6 @@ export default class AuthService extends EventEmitter {
   logout() {
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
+    localStorage.removeItem('user');
   }
 }

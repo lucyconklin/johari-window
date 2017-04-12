@@ -9,7 +9,6 @@ class Sidebar extends Component {
     auth: T.instanceOf(AuthService)
   }
 
-
   render() {
     const { auth } = this.props
 

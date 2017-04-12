@@ -12,7 +12,7 @@ class MyWindow extends Component {
       blindSpot: [],
       unknown: []
     },
-    user: new User(JSON.parse(localStorage.getItem('user'))) };
+    user: new User(JSON.parse(localStorage.getItem('user'))) || {} };
 
     this.getMyWindow = this.getMyWindow.bind(this);
   }

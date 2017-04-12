@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import Sidebar from '../sidebar/Sidebar';
+import User from '../user/User'
 import "./App.css"
 
 class App extends Component {
   constructor(props) {
     super(props)
-
-  }
-
-  componentDidMount() {
-    this.setState({user: this.props.setUser(localStorage.getItem('profile'), localStorage.getItem('id_token'))})
+    this.state = { user: new User(JSON.parse(localStorage.getItem('user')) || {} )}
   }
 
   render() {

@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import Assignee from '../assignee/Assignee';
-import User from '../user/User'
 import './AssigneeList.css';
 
 class AssigneeList extends Component {
-  constructor() {
-    super();
-    this.state = { assignees: [],
-      user: new User(JSON.parse(localStorage.getItem('user'))) }
+  constructor(props) {
+    super(props);
+    this.state = { assignees: [] }
   }
 
   componentDidMount() {
-    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/${this.state.user.id}/assignments`)
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/${this.props.user.id}/assignments`)
       .then(result => result.json())
       .then(data => this.setState({ assignees: data }))
   }

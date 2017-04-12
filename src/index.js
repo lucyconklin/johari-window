@@ -14,10 +14,10 @@ import './shared.css';
 
 const auth = new AuthService('jH67SpOvPqTg0Jal6m49SCGdECSsFI4L', 'joahriwindow.auth0.com');
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({ component: Component, user: user, ...rest }) => (
   <Route {...rest} render={props => (
     auth.loggedIn() ? (
-      <Component {...props}/>
+      <Component user={user} {...rest}/>
     ) : (
       <Redirect to={{
         pathname: '/login',
@@ -35,7 +35,7 @@ const setUser = (profile, token) => {
       .then(result => {
         let user_response = result.data
         let user = new User(user_response)
-        return user
+        localStorage.setItem('user', JSON.stringify(user))
       })
       .catch(error => console.log(error))
   } else {
@@ -43,19 +43,26 @@ const setUser = (profile, token) => {
   }
 }
 
-const user = setUser(localStorage.getItem('profile'), localStorage.getItem('id_token'))
+setUser(localStorage.getItem('profile'), localStorage.getItem('id_token'))
+
+const assignUser = () => {
+  if(localStorage.getItem('user')) {
+    return new User(JSON.parse(localStorage.getItem('user')))
+  } else {
+    return {}
+  }
+}
 
 ReactDOM.render(
   <Router >
     <div className='Router'>
-    { console.log(user) }
-    <Route path='/' render={() => <App auth={auth} setUser={setUser} /> } />
+    <Route path='/' render={() => <App auth={auth} user={assignUser()} /> } />
       <Switch>
-        <PrivateRoute exact path='/' component={Main} user={user} />
-        <PrivateRoute path='/johari/:id' component={Johari} evaluateeID={({match}) => match.params.id} user={user} />
-        <PrivateRoute path='/mywindow' component={MyWindow} user={user} />
+        <PrivateRoute exact path='/' component={Main} user={assignUser()} />
+        <PrivateRoute path='/johari/:id' component={Johari} user={assignUser()}  evaluateeID={({match}) => match.params.id} />
+        <PrivateRoute path='/mywindow' component={MyWindow} user={assignUser()} />
         <Route path='/login' render={ () => <Login auth={auth} /> } />
-        <Route render={ () => <NoMatch /> } />
+        <Route render={() => <NoMatch /> } />
       </ Switch >
     </div>
   </Router>
