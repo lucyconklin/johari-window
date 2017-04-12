@@ -4,10 +4,12 @@ import './JohariSubmit.css';
 
 class JohariSubmit extends Component {
   constructor() {
-    super();
+    super()
+    this.state = { user: new User(JSON.parse(localStorage.getItem('user'))) }
+
     this.activeSubmit = this.activeSubmit.bind(this)
     this.inactiveSubmit = this.inactiveSubmit.bind(this)
-    this.submit = this.submit.bind(this);
+    this.submit = this.submit.bind(this)
   }
 
   submit() {
@@ -19,7 +21,7 @@ class JohariSubmit extends Component {
       },
       body: JSON.stringify({
         johari: this.props.adjectives,
-        describer_id: '150',
+        describer_id: this.state.user.id,
       })
     })
     .then(data => true)
