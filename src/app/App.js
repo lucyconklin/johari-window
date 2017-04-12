@@ -4,15 +4,11 @@ import User from '../user/User'
 import "./App.css"
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { user: new User(JSON.parse(localStorage.getItem('user')) || {} )}
-  }
 
   render() {
     return (
       <div className='App'>
-        <Sidebar />
+        <Sidebar user={this.props.user} auth={this.props.auth}/>
       </div>
     )
   }

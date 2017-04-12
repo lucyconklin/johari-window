@@ -10,7 +10,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { auth } = this.props
+    const { auth } = this.props.auth
 
     return (
       <div className='Sidebar'>
@@ -20,6 +20,9 @@ class Sidebar extends Component {
         <div className='sidebar-links'>
           <Link to='/'>Assignments</Link>
           <Link to='/mywindow'>My Window</Link>
+        </div>
+        <div className='sidebar-user-info'>
+          <p>logged in as: {this.props.user.name}</p>
         </div>
       </div>
     );

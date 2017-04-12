@@ -27,19 +27,26 @@ h1, p, h2, h3, h4 {
   position: fixed;
   top: 0;
   bottom: 0; }
-  .Sidebar h1 {
-    font-size: 24px;
-    margin: 20px;
-    text-shadow: RGBA(255, 255, 255, 0.7) 1px 1px 0; }
+
+.Sidebar h1 {
+  font-size: 24px;
+  margin: 20px;
+  text-shadow: RGBA(255, 255, 255, 0.7) 1px 1px 0; }
+
+.Sidebar .sidebar-user-info {
+  position: fixed;
+  bottom: 15px; }
 
 .Sidebar .sidebar-links {
   margin: 20px; }
-  .Sidebar .sidebar-links a {
-    color: RGB(85, 114, 179);
-    text-decoration: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    display: block;
-    line-height: 24px;
-    font-size: 18px; }
-  .Sidebar .sidebar-links a:hover {
-    color: RGB(20, 36, 72); }
+
+.Sidebar .sidebar-links a {
+  color: RGB(85, 114, 179);
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  line-height: 24px;
+  font-size: 18px; }
+
+.Sidebar .sidebar-links a:hover {
+  color: RGB(20, 36, 72); }
