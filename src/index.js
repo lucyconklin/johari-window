@@ -14,7 +14,7 @@ import './shared.css';
 
 const auth = new AuthService('jH67SpOvPqTg0Jal6m49SCGdECSsFI4L', 'joahriwindow.auth0.com');
 
-const PrivateRoute = ({ component: Component, user: user, ...rest }) => (
+const PrivateRoute = ({ component: Component, user, ...rest }) => (
   <Route {...rest} render={props => (
     auth.loggedIn() ? (
       <Component user={user} {...rest}/>

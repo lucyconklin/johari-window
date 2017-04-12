@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './MyWindow.css';
-import User from '../user/User'
 import MyWindowAdjective from '../my-window-adjective/MyWindowAdjective'
 
 class MyWindow extends Component {
