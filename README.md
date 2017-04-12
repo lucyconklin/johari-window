@@ -28,6 +28,8 @@ OR
 
 ## Production Environment
 
+Check out the [Consideration docs](CONSIDERATIONS.md) for user accessibility details!
+
 ## Common Issues
 
 ## Going Forward
