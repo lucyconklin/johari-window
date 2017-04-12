@@ -30,7 +30,7 @@ ReactDOM.render(
     <div className='Router'>
     <Route path='/' component={App} auth={ true } />
       <Switch>
-        <PrivateRoute path='/assignments' component={Main} />
+        <PrivateRoute exact path='/' component={Main} />
         <PrivateRoute path='/johari/:id' component={Johari} evaluateeID={({match}) => match.params.id}/>
         <PrivateRoute path='/mywindow' component={MyWindow} />
         <Route path='/login' render={ () => <Login auth={auth} /> } />

@@ -1,6 +1,5 @@
 import Auth0Lock from 'auth0-lock'
 import { withRouter } from 'react-router-dom'
-import { isTokenExpired } from './jwtHelper'
 import { EventEmitter } from 'events'
 
 const Redirect = withRouter(({history}) => {
@@ -39,9 +38,7 @@ export default class AuthService extends EventEmitter {
   }
 
   loggedIn() {
-    // Checks if there is a saved token and it's still valid
-    const token = this.getToken()
-    return !!this.getToken() && !isTokenExpired(token)
+    return !!this.getToken()
   }
 
   setToken(idToken) {
