@@ -17,7 +17,7 @@ class Johari extends Component {
 
   componentDidMount() {
     var user = 'user' + this.props.evaluateeID
-    if (localStorage[user]) { this.setNameLocally(user) } 
+    if (localStorage[user]) { this.setNameLocally(user) }
     else { this.retrieveNameAndSetLocally(user) }
   }
 
@@ -28,7 +28,7 @@ class Johari extends Component {
     } else {
       adjectives.push(adjective)
     }
-    this.setState({ adjectives: adjectives }) 
+    this.setState({ adjectives: adjectives })
   }
 
   readyToSubmit() {

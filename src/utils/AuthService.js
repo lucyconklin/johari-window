@@ -5,7 +5,7 @@ import { EventEmitter } from 'events'
 
 const Redirect = withRouter(({history}) => {
   history.push('/')
-}) 
+})
 
 export default class AuthService extends EventEmitter {
   constructor(clientId, domain) {
@@ -51,7 +51,7 @@ export default class AuthService extends EventEmitter {
   getToken() {
     return localStorage.getItem('id_token')
   }
-  
+
   setProfile(profile) {
     localStorage.setItem('profile', JSON.stringify(profile))
     // Triggers profile_updated event to update the UI
