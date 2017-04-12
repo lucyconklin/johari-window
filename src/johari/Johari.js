@@ -2,17 +2,38 @@ import React, { Component } from 'react';
 import './Johari.css';
 import AdjectiveList from '../adjective-list/AdjectiveList'
 import JohariSubmit from '../johari-submit/JohariSubmit'
+import Axios from 'axios'
 import { Link } from 'react-router-dom';
 
 class Johari extends Component {
 
-  constructor() {
-    super();
-    this.state = { evaluateeName: '', adjectives: [] };
+  constructor(props) {
+    super(props);
+    this.state = { evaluateeName: '', adjectives: [],
+      user: { user: this.setUser(localStorage.getItem('profile'), localStorage.getItem('token')) }
+    }
+    props.auth.on('profile_updated', () => {
+      this.setUser(localStorage.getItem('profile'), localStorage.getItem('id_token'))
+    })
 
     this.toggleAdjective = this.toggleAdjective.bind(this);
     this.retrieveNameAndSetLocally = this.retrieveNameAndSetLocally.bind(this);
     this.readyToSubmit = this.readyToSubmit.bind(this);
+  }
+
+  setUser(profile, token) {
+    if(profile) {
+      let parsed_profile = JSON.parse(profile)
+      let user_info = {"user": {"name": parsed_profile.name, "github": parsed_profile.nickname, "token": token}}
+      Axios.post('https://johariwindowapi.herokuapp.com/api/v1/users', user_info)
+        .then(result => {
+          let user_response = result.data
+          this.setState({user: user_response})
+        })
+        .catch(error => console.log(error))
+    } else {
+      return false
+    }
   }
 
   componentDidMount() {

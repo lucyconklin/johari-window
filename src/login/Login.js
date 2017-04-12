@@ -14,7 +14,6 @@ export class Login extends React.Component {
     this.state = {
       redirectRoot: this.findUser()
     };
-    
   }
 
   findUser() {
@@ -22,9 +21,14 @@ export class Login extends React.Component {
   }
 
 
-  loginAndRedirect = new Promise((resolve, reject) => {
-      this.props.auth.login(this)
-    })
+  // loginAndRedirect = new Promise((resolve, reject) => {
+  //     this.props.auth.login(this)
+  //   })
+
+  loginAndRedirect() {
+    this.props.auth.login(this)
+    this.setState({ redirectRoot: true })
+  }
 
   render() {
     if (this.state.redirectRoot) {
@@ -36,8 +40,8 @@ export class Login extends React.Component {
     const LoginButton = withRouter(({ history }) => (
       <button
         onClick={() => {
-          this.loginAndRedirect(this).then(this.setState({redirectRoot: this.findUser()})
-          )}}>Login</button>
+          this.loginAndRedirect()
+          }}>Login</button>
     ))
 
     return (
