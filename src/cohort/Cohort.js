@@ -15,7 +15,6 @@ class Cohort extends Component {
   }
 
   post(){
-    console.log(JSON.stringify(this.state.groups))
     fetch(`https://johariwindowapi.herokuapp.com/api/v1/assignments`, {
       method: 'POST',
       headers: {
