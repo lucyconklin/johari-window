@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './MyWindow.css';
+import User from '../user/User'
 import MyWindowAdjective from '../my-window-adjective/MyWindowAdjective'
 
 class MyWindow extends Component {
@@ -10,7 +11,8 @@ class MyWindow extends Component {
       facade: [],
       blindSpot: [],
       unknown: []
-    } };
+    },
+    user: new User(JSON.parse(localStorage.getItem('user'))) };
 
     this.getMyWindow = this.getMyWindow.bind(this);
   }
@@ -20,7 +22,7 @@ class MyWindow extends Component {
   }
 
   getMyWindow () {
-    fetch('https://johariwindowapi.herokuapp.com/api/v1/users/1/descriptions')
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/${this.state.user.id}/descriptions`)
       .then(result => result.json() )
       .then(data => {
 
