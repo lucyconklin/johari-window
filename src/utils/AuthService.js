@@ -1,10 +1,5 @@
 import Auth0Lock from 'auth0-lock'
-import { withRouter } from 'react-router-dom'
 import { EventEmitter } from 'events'
-
-const Redirect = withRouter(({history}) => {
-  history.push('/')
-})
 
 export default class AuthService extends EventEmitter {
   constructor(clientId, domain) {
@@ -15,13 +10,11 @@ export default class AuthService extends EventEmitter {
         responseType: 'token'
       }
     })
-    // Add callback for lock `authenticated` event
     this.lock.on('authenticated', this._doAuthentication.bind(this))
     this.login = this.login.bind(this)
   }
 
   _doAuthentication(authResult) {
-    // Saves the user token
     this.setToken(authResult.idToken)
     this.lock.getProfile(authResult.idToken, (error, profile) => {
       if (error) {
@@ -30,7 +23,7 @@ export default class AuthService extends EventEmitter {
         this.setProfile(profile)
       }
     })
-    Redirect()
+    
   }
 
   login() {

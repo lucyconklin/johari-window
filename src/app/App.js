@@ -4,15 +4,14 @@ import Sidebar from '../sidebar/Sidebar';
 import "./App.css"
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      user: { user: false }
+      user: { user: this.setUser(localStorage.getItem('profile'), localStorage.getItem('token')) }
     }
-  }
-
-  componentDidMount() {
-    this.setUser(localStorage.getItem('profile'), localStorage.getItem('id_token'))
+    props.auth.on('profile_updated', () => {
+      this.setUser(localStorage.getItem('profile'), localStorage.getItem('id_token'))
+    })
   }
 
   setUser(profile, token) {
@@ -25,6 +24,8 @@ class App extends Component {
           this.setState({user: user_response})
         })
         .catch(error => console.log(error))
+    } else {
+      false
     }
   }
 

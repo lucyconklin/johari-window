@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import AuthService from '../utils/AuthService';
 import './Login.css'
 
@@ -9,18 +9,35 @@ export class Login extends React.Component {
     auth: T.instanceOf(AuthService)
   }
 
+  constructor() {
+    super()
+    this.state = {
+      redirectRoot: this.findUser()
+    };
+    
+  }
+
+  findUser() {
+    return !!localStorage.getItem('profile')
+  }
+
+
+  loginAndRedirect = new Promise((resolve, reject) => {
+      this.props.auth.login(this)
+    })
 
   render() {
-    const { auth } = this.props
-
-    const onAuthRedirect = (history) => {
-      auth.login(this)
-      history.push('/')
+    if (this.state.redirectRoot) {
+      return (
+        <Redirect to='/' />
+      )
     }
 
     const LoginButton = withRouter(({ history }) => (
       <button
-        onClick={() => onAuthRedirect(history)}>Login</button>
+        onClick={() => {
+          this.loginAndRedirect(this).then(this.setState({redirectRoot: this.findUser()})
+          )}}>Login</button>
     ))
 
     return (

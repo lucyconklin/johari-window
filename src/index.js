@@ -28,7 +28,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 ReactDOM.render(
   <Router>
     <div className='Router'>
-    <Route path='/' component={App} auth={ true } />
+    <Route path='/' render={() => <App auth={auth} /> } />
       <Switch>
         <PrivateRoute exact path='/' component={Main} />
         <PrivateRoute path='/johari/:id' component={Johari} evaluateeID={({match}) => match.params.id}/>
