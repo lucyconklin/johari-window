@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import "./App.css"
 
 import Main from '../main/Main';
+import Admin from '../admin/Admin';
+import Cohort from '../cohort/Cohort';
 import Johari from '../johari/Johari';
 import Sidebar from '../sidebar/Sidebar';
 import NoMatch from '../no-match/NoMatch';
@@ -32,6 +34,17 @@ class App extends Component {
                 exact={true}
                 path='/'
                 render={ () => <Main /> }
+              />
+              <Route
+                key='5'
+                exact={true}
+                path='/admin'
+                render={ () => <Admin /> }
+              />
+              <Route
+                key='6'
+                path='/admin/cohort/:id'
+                render={ ({match}) => <Cohort cohortID={match.params.id} /> }
               />
               <Route
                 key='4'

@@ -15,7 +15,7 @@ describe('Sidebar', () => {
   it('renders sidebar links', () => {
 
     expect(wrapper.find('.sidebar-links').length).toEqual(1)
-    expect(wrapper.find('.sidebar-links').children().length).toEqual(2)
+    expect(wrapper.find('.sidebar-links').children().length).toEqual(3)
   })
 
   it('renders the text johari window', () => {

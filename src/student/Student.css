@@ -21,28 +21,20 @@ h1, p, h2, h3, h4 {
   background-color: RGB(128, 171, 217);
   color: RGB(20, 36, 72); }
 
-.Sidebar {
-  width: 250px;
-  border-right: 2px solid RGB(230, 230, 230);
-  position: fixed;
-  top: 0;
-  bottom: 0; }
+label {
+  line-height: 30px;
+  vertical-align: center; }
 
-.Sidebar h1 {
-  font-size: 24px;
-  margin: 20px;
-  text-shadow: RGBA(255, 255, 255, 0.7) 1px 1px 0; }
+.Student {
+  width: 300px;
+  display: inline-block; }
 
-.Sidebar .sidebar-links {
-  margin: 20px; }
+input[type=checkbox] {
+  margin-right: 8px;
+  height: 15px;
+  width: 15px;
+  line-height: 24px; }
 
-.Sidebar .sidebar-links a {
+input[type=checkbox]:checked + label {
   color: RGB(85, 114, 179);
-  text-decoration: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  display: block;
-  line-height: 24px;
-  font-size: 18px; }
-
-.Sidebar .sidebar-links a:hover {
-  color: RGB(20, 36, 72); }
+  font-weight: bold; }
