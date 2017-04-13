@@ -10,7 +10,6 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { auth } = this.props.auth
     return (
       <div className='Sidebar'>
         <div className='sidebar-header'>
