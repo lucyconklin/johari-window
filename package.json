@@ -1,6 +1,9 @@
 {
   "name": "johari-window",
   "version": "0.1.0",
+  "engines": {
+    "node": "7.9.0"
+  },
   "private": true,
   "dependencies": {
     "auth0-lock": "^10.14.0",
