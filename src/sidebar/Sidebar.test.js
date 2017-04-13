@@ -9,7 +9,9 @@ describe('Sidebar', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Router><Sidebar /></Router>)
+    const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
+    const auth = "auth"
+    wrapper = render (<Router><Sidebar user={user} auth={auth} /></Router>)
   })
 
   it('renders sidebar links', () => {

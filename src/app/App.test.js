@@ -8,7 +8,9 @@ describe('App', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Router><App /></Router>)
+    const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
+    const auth = "auth"
+    wrapper = mount(<Router><App user={user} auth={auth}/></Router>)
   })
 
   it('renders sidebar', () => {
@@ -17,7 +19,7 @@ describe('App', () => {
   })
 
   it('renders main by default', () => {
-
+    console.log(wrapper.component.path)
     expect(wrapper.find('.Main').length).toEqual(1)
     expect(wrapper.find('.Johari').length).toEqual(0)
   })

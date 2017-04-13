@@ -9,7 +9,9 @@ describe('AssigneeList', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Router><AssigneeList /></Router>)
+    const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
+    const auth = "auth"
+    wrapper = mount(<Router><AssigneeList user={user} auth={auth} /></Router>)
   })
 
   it('renders without crashing', () => {});

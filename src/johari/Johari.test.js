@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Johari from './Johari';
+import AuthService from '../utils/AuthService'
 import { BrowserRouter as Router } from 'react-router-dom';
 
 global.localStorage = {}
@@ -10,7 +11,8 @@ describe('Johari', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Router><Johari /></Router>)
+    const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
+    wrapper = mount(<Johari user={user} />)
   })
 
    it('renders directions', () => {
