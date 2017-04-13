@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import User from '../user/User'
 import './JohariSubmit.css';
 
 class JohariSubmit extends Component {
