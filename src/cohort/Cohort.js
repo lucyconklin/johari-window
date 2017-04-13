@@ -55,7 +55,8 @@ class Cohort extends Component {
 
   retrieveStudents(){
     var that = this;
-    fetch('https://johariwindowapi.herokuapp.com/api/v1/cohorts/' + that.props.cohortID + '/users')
+    console.log(this.props.cohortID)
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/cohorts/${this.props.cohortID}/users`)
       .then(result => result.json())
       .then(data => {
         that.setState({ students: data })
