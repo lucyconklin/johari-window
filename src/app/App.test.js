@@ -19,7 +19,6 @@ describe('App', () => {
   })
 
   it('renders main by default', () => {
-    console.log(wrapper.component.path)
     expect(wrapper.find('.Main').length).toEqual(1)
     expect(wrapper.find('.Johari').length).toEqual(0)
   })
