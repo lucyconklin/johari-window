@@ -10,8 +10,7 @@ class MyWindow extends Component {
       facade: [],
       blindSpot: [],
       unknown: []
-    } };
-
+    } }
     this.getMyWindow = this.getMyWindow.bind(this);
   }
 
@@ -20,7 +19,7 @@ class MyWindow extends Component {
   }
 
   getMyWindow () {
-    fetch('https://johariwindowapi.herokuapp.com/api/v1/users/150/descriptions')
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/${this.props.user.id}/descriptions`)
       .then(result => result.json() )
       .then(data => {
 

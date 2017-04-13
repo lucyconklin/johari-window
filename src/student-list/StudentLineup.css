@@ -24,6 +24,8 @@ h1, p, h2, h3, h4 {
 .StudentLineup {
   position: absolute;
   left: 253px;
+  top: 0;
+  bottom: 0;
   padding: 20px;
   width: 600px;
   border-right: 2px solid RGB(230, 230, 230); }

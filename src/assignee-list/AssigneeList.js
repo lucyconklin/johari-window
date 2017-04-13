@@ -3,13 +3,13 @@ import Assignee from '../assignee/Assignee';
 import './AssigneeList.css';
 
 class AssigneeList extends Component {
-  constructor() {
-    super();
-    this.state = { assignees: [] };
+  constructor(props) {
+    super(props);
+    this.state = { assignees: [] }
   }
 
   componentDidMount() {
-    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/150/assignments`)
+    fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/${this.props.user.id}/assignments`)
       .then(result => result.json())
       .then(data => this.setState({ assignees: data }))
   }

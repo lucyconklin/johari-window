@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import './JohariSubmit.css';
 
 class JohariSubmit extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
+
     this.activeSubmit = this.activeSubmit.bind(this)
     this.inactiveSubmit = this.inactiveSubmit.bind(this)
-    this.submit = this.submit.bind(this);
+    this.submit = this.submit.bind(this)
   }
 
   submit() {
@@ -19,7 +20,7 @@ class JohariSubmit extends Component {
       },
       body: JSON.stringify({
         johari: this.props.adjectives,
-        describer_id: '150',
+        describer_id: this.props.user.id,
       })
     })
     .then(data => true)

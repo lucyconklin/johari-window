@@ -4,15 +4,16 @@ import Header from './Header';
 
 describe('Header', () => {
   it('renders without crashing', () => {
-    shallow(<Header />);
+    const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
+    const auth = "auth"
+    shallow(<Header user={user} auth={auth}/>)
   })
 
   it('renders the users name', () => {
-    const name = 'Stannis Baratheon';
-    const wrapper = shallow(<Header />);
-    wrapper.setState({ name: name })
-    const htmlName = <h3>Stannis Baratheon</h3>;
+    const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
+    const auth = "auth"
 
-    expect(wrapper.contains(htmlName)).toEqual(true);
+    const wrapper = shallow(<Header user={user} auth={auth}/>)
+    expect(wrapper.find('.Header').length).toEqual(1);
   })
 })

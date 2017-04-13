@@ -8,7 +8,9 @@ describe('Main', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Router><Main /></Router>)
+    const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
+    const auth = "auth"
+    wrapper = mount(<Router><Main user={user} auth={auth} /></Router>)
   })
 
   it('renders assignee list and header components', () => {

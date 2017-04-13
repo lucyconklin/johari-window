@@ -25,14 +25,12 @@ h1, p, h2, h3, h4 {
   position: absolute;
   left: 253px;
   padding: 20px; }
-
-.Admin a {
-  color: RGB(85, 114, 179);
-  text-decoration: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  display: block;
-  line-height: 24px;
-  font-size: 18px; }
-
-.Admin a:hover {
-  color: RGB(20, 36, 72); }
+  .Admin a {
+    color: RGB(85, 114, 179);
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    line-height: 24px;
+    font-size: 18px; }
+  .Admin a:hover {
+    color: RGB(20, 36, 72); }

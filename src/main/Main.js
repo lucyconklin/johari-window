@@ -7,8 +7,8 @@ class Main extends Component {
   render() {
     return (
       <div className='Main'>
-        <Header />
-        <AssigneeList />
+        <Header user={this.props.user}/>
+        <AssigneeList user={this.props.user}/>
       </div>
     );
   }
