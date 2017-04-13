@@ -20,6 +20,7 @@ class Sidebar extends Component {
         <div className='sidebar-links'>
           <Link to='/'>Assignments</Link>
           <Link to='/mywindow'>My Window</Link>
+          <Link to='/admin'>Admin</Link>
         </div>
         <div className='sidebar-user-info'>
           <p>logged in as: {this.props.user.name}</p>

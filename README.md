@@ -31,3 +31,11 @@ OR
 ## Common Issues
 
 ## Going Forward
+
+## Primary Contributors
+
+- [Lucy Conklin](https://github.com/lucyconklin)
+- [Annie Wolff](https://github.com/wlffann)
+- [Drew Palazzari](https://github.com/Dpalazzari)
+- [Kyle Heppenstall](https://github.com/kheppenstall)
+- [Amy Kintner](https://github.com/akintner)

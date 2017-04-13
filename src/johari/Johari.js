@@ -53,7 +53,7 @@ class Johari extends Component {
   }
 
   readyToSubmit() {
-    return (this.state.adjectives.length === 10)
+    return (this.state.adjectives.length === 15)
   }
 
   retrieveNameAndSetLocally(user) {
@@ -74,7 +74,7 @@ class Johari extends Component {
     return (
       <div className='Johari'>
         <h3 className='johari-title'>Evaluate {this.state.evaluateeName}</h3>
-        <p className='directions'>Select ten that apply.</p>
+        <p className='directions'>Select 15 that apply.</p>
         <AdjectiveList toggleAdjective={this.toggleAdjective}/>
         <div className='johari-buttons'>
           <JohariSubmit adjectives={this.state.adjectives}
