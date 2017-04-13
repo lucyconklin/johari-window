@@ -12,7 +12,7 @@ describe('Johari', () => {
 
   beforeEach(() => {
     const user = {name: "Olenna Tyrell", github: "revengeissweet", id: 1, token: "1", cohort: 1 }
-    wrapper = mount(<Johari user={user} />)
+    wrapper = mount(<Router><Johari user={user} /></Router>)
   })
 
    it('renders directions', () => {
